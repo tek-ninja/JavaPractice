@@ -1,13 +1,13 @@
 package recursion.Intermediate;
 
 public class Palindrome {
-    static String text = "Balaji";
+    static String text = "sas";
 
     void main() {
-        System.out.println(checkPalindrome(0, text.length() - 1, text.length()));
+        System.out.println(checkPalindrome(0, text.length() - 1));
     }
 
-    static boolean checkPalindrome(int start, int end, int n) {
+    static boolean checkPalindrome(int start, int end) {
 
         if (start >= end) {
             return true;
@@ -16,7 +16,7 @@ public class Palindrome {
             return false;
         }
 
-        return checkPalindrome(start + 1, end - 1, n);
+        return checkPalindrome(start + 1, end - 1);
 
     }
 }

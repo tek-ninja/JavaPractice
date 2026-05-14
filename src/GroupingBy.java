@@ -23,9 +23,11 @@ public class GroupingBy {
                 Collectors.groupingBy(Employee::getDepartment
                         , Collectors.maxBy(Comparator.comparing(Employee::getSalary)))
         );
-        for(Map.Entry<String,Optional<Employee>> emp : highestPaidEmployee.entrySet()){
-            System.out.println("Key :"+emp.getKey()+" Value "+emp.getValue().get());
+        for (Map.Entry<String, Optional<Employee>> emp : highestPaidEmployee.entrySet()) {
+            System.out.println("Key :" + emp.getKey() + " Value " + emp.getValue().get());
         }
+        var employees = employeeList.stream().collect(Collectors.groupingBy(Employee::getDepartment));
+        System.out.println(employees);
     }
 }
 
